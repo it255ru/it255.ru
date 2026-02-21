@@ -1,142 +1,217 @@
+# =============================================================================
+# Конфигурация сайта Jekyll + Chirpy
+# =============================================================================
+# Документация темы: https://chirpy.cotes.page/
+# Документация Jekyll: https://jekyllrb.com/docs/configuration/
+
+# --- Тема ---
+# Подключение темы Chirpy. Не менять, если используешь chirpy-starter.
 theme: jekyll-theme-chirpy
-lang: ru
-timezone:
+
+# --- Язык ---
+# Код языка сайта. Влияет на интерфейс (кнопки, даты, навигацию).
+# Доступные локали лежат в _data/locales/ внутри гема темы.
+# Полный список кодов: http://www.lingoes.net/en/translator/langcode.htm
+# Для русского — "ru-RU", для английского — "en"
+lang: ru-RU
+
+# --- Часовой пояс ---
+# Используется для корректного отображения дат в постах.
+# Список зон: https://zones.arilyn.cc
+# Примеры: Europe/Moscow, Asia/Yekaterinburg, Europe/Kaliningrad
+timezone: Europe/Moscow
+
+# =============================================================================
+# SEO-настройки (используются плагином jekyll-seo-tag)
+# Документация: https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# =============================================================================
+
+# --- Заголовок сайта ---
+# Отображается в шапке, вкладке браузера и поисковой выдаче.
 title: Anton Eremin | it255.ru
+
+# --- Подзаголовок ---
+# Показывается под заголовком в сайдбаре.
 tagline: DevSecOps & SRE
-description: >- # used by seo meta and the atom feed
+
+# --- Описание сайта ---
+# Используется в мета-теге description и в RSS-ленте.
+# Символ >- означает многострочную строку без переноса.
+description: >-
   DevSecOps & SRE.
 
+# --- URL сайта ---
+# Протокол + домен БЕЗ завершающего слеша.
+# Пример: https://username.github.io или https://example.com
 url: "https://it255.ru"
 
+# --- GitHub ---
+# Имя пользователя GitHub. Используется для ссылок в подвале.
 github:
   username: it255ru
+
+# --- Twitter (необязательно) ---
+# Если нет Twitter — закомментируй или удали секцию.
+# twitter:
+#   username: twitter_username
+
+# --- Автор и контакты ---
+# name — автор по умолчанию для постов и копирайт в подвале.
+# email — для ссылки "написать автору".
+# links — первая ссылка используется как ссылка копирайта.
 social:
-  name: it255ru
-  email: anton@it255.ru # change to your email address
+  name: Anton Eremin
+  email: anton@it255.ru
   links:
-    # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
+    - https://github.com/it255ru
+    # - https://twitter.com/username
     # - https://www.linkedin.com/in/username
+    # - https://t.me/username
 
-# Site Verification Settings
+# =============================================================================
+# Верификация в поисковиках (необязательно)
+# =============================================================================
+# Вставь коды верификации из соответствующих вебмастерок.
+# Google: https://search.google.com/search-console
+# Yandex: https://webmaster.yandex.ru
 webmaster_verifications:
-  google: # fill in your Google verification code
-  bing: # fill in your Bing verification code
-  alexa: # fill in your Alexa verification code
-  yandex: # fill in your Yandex verification code
-  baidu: # fill in your Baidu verification code
-  facebook: # fill in your Facebook verification code
+  google:   # код из Google Search Console
+  bing:     # код из Bing Webmaster Tools
+  alexa:    # код Alexa (сервис закрыт, можно не заполнять)
+  yandex:   # код из Яндекс.Вебмастер
+  baidu:    # код из Baidu Webmaster
+  facebook: # код верификации Facebook
 
-# ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
-
-# Web Analytics Settings
+# =============================================================================
+# Аналитика (необязательно)
+# =============================================================================
+# Подключи один или несколько сервисов аналитики.
+# Google Analytics: https://analytics.google.com — создай ресурс, скопируй Measurement ID (G-XXXXXXX).
+# GoatCounter: https://goatcounter.com — лёгкая альтернатива без cookies.
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id:           # например: G-XXXXXXXXXX
   goatcounter:
-    id: # fill in your GoatCounter ID
+    id:           # имя инстанса GoatCounter
   umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
+    id:           # ID сайта в Umami
+    domain:       # домен Umami-сервера
   matomo:
-    id: # fill in your Matomo ID
-    domain: # fill in your Matomo domain
+    id:           # ID сайта в Matomo
+    domain:       # домен Matomo-сервера
   cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
+    id:           # токен Cloudflare Web Analytics
   fathom:
-    id: # fill in your Fathom Site ID
+    id:           # Site ID в Fathom
 
-# Page views settings
+# --- Просмотры страниц ---
+# Показывает счётчик просмотров на постах. Пока поддерживается только GoatCounter.
 pageviews:
-  provider: # now only supports 'goatcounter'
+  provider:       # goatcounter
 
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light — Use the light color scheme
-#     dark — Use the dark color scheme
-#
-theme_mode: # [light | dark]
+# =============================================================================
+# Внешний вид
+# =============================================================================
 
-# The CDN endpoint for media resources.
-# Notice that once it is assigned, the CDN url
-# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
-#
-# e.g. 'https://cdn.com'
+# --- Цветовая схема ---
+# Оставь пустым — будет переключатель светлой/тёмной темы в сайдбаре.
+# Или зафиксируй: light / dark
+theme_mode:       # [light | dark]
+
+# --- CDN для медиа ---
+# Если используешь CDN для картинок/видео — укажи базовый URL.
+# Он будет добавлен ко всем путям медиаресурсов, начинающимся с '/'.
+# Пример: https://cdn.example.com
 cdn:
 
-# the avatar on sidebar, support local or CORS resources
+# --- Аватар ---
+# Изображение в сайдбаре. Локальный путь или внешний URL.
+# ВАЖНО: файл должен реально существовать в репозитории!
+# Положи картинку в assets/img/avatar.jpg
 avatar: /assets/img/avatar.jpg
 
-# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
-# It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+# --- Превью для соцсетей ---
+# Изображение для мета-тега og:image (при шеринге ссылки в соцсетях/мессенджерах).
+# Можно переопределить в конкретном посте через page.image.
+social_preview_image:   # путь к картинке или URL
 
-# boolean type, the global switch for TOC in posts.
+# --- Оглавление ---
+# Глобальный переключатель оглавления (Table of Contents) в постах.
+# true — показывать, false — скрыть. Можно переопределить в посте: toc: false
 toc: true
 
+# =============================================================================
+# Комментарии (необязательно)
+# =============================================================================
+# Выбери провайдер комментариев и заполни его настройки.
+# disqus — классика, требует регистрации на disqus.com
+# utterances — комменты через GitHub Issues
+# giscus — комменты через GitHub Discussions (рекомендуется)
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
-  # The provider options are as follows:
-  disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-  # utterances settings › https://utteranc.es/
-  utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
-  # Giscus options › https://giscus.app
-  giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
-    reactions_enabled: # optional, default to the value of `1`
+  provider:       # [disqus | utterances | giscus]
 
-# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
+  disqus:
+    shortname:    # короткое имя сайта в Disqus
+
+  # Utterances: https://utteranc.es/
+  utterances:
+    repo:         # формат: username/repo
+    issue_term:   # url | pathname | title
+
+  # Giscus: https://giscus.app — заполни форму на сайте, скопируй значения.
+  giscus:
+    repo:              # формат: username/repo
+    repo_id:           # из настроек giscus
+    category:          # название категории Discussions
+    category_id:       # ID категории
+    mapping:           # pathname (по умолчанию)
+    strict:            # 0 (по умолчанию)
+    input_position:    # bottom (по умолчанию)
+    lang:              # язык виджета, по умолчанию = site.lang
+    reactions_enabled:  # 1 (по умолчанию)
+
+# =============================================================================
+# Статические ресурсы
+# =============================================================================
+# Для self-hosted версии статики (JS/CSS темы).
+# Подробнее: https://github.com/cotes2020/chirpy-static-assets
+# Обычно НЕ нужно включать — ресурсы подтягиваются из CDN.
 assets:
   self_host:
-    enabled: # boolean, keep empty means false
-    # specify the Jekyll environment, empty means both
-    # only works if `assets.self_host.enabled` is 'true'
-    env: # [development | production]
+    enabled:      # true/false, пустое = false
+    env:          # [development | production], пустое = оба
 
+# =============================================================================
+# PWA (Progressive Web App)
+# =============================================================================
+# Позволяет "установить" сайт как приложение и кешировать для офлайн-доступа.
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: true          # true — сайт можно установить как PWA
   cache:
-    enabled: true # The option for PWA offline cache
-    # Paths defined here will be excluded from the PWA cache.
-    # Usually its value is the `baseurl` of another website that
-    # shares the same domain name as the current website.
-    deny_paths:
-      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
+    enabled: true        # true — включить офлайн-кеш
+    deny_paths:          # пути, исключённые из кеша
+      # - "/example"     # URL вида <SITE_URL>/example/* не будут кешироваться
 
+# =============================================================================
+# Пагинация
+# =============================================================================
+# Количество постов на главной странице.
 paginate: 10
 
-# The base URL of your site
+# --- Базовый путь ---
+# Если сайт в подпапке (например, username.github.io/blog), укажи: /blog
+# Для корневого домена оставь пустым.
 baseurl: ""
 
-# ------------ The following options are not recommended to be modified ------------------
+# =============================================================================
+# Ниже — технические настройки. Менять НЕ рекомендуется.
+# =============================================================================
 
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
+  syntax_highlighter_opts:
     css_class: highlight
-    # default_lang: console
     span:
       line_numbers: false
     block:
@@ -150,14 +225,12 @@ collections:
 
 defaults:
   - scope:
-      path: "" # An empty string here means all files in the project
+      path: ""
       type: posts
     values:
       layout: post
-      comments: true # Enable comments in posts.
-      toc: true # Display TOC column in posts.
-      # DO NOT modify the following parameter unless you are confident enough
-      # to update the code of all other post links in this project.
+      comments: true
+      toc: true
       permalink: /posts/:title/
   - scope:
       path: _drafts
@@ -165,7 +238,7 @@ defaults:
       comments: false
   - scope:
       path: ""
-      type: tabs # see `site.collections`
+      type: tabs
     values:
       layout: page
       permalink: /:title/
